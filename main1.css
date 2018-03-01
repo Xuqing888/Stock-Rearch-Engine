@@ -1,23 +1,35 @@
-.page1-1{
-    height: 50px;
-    width: 20%;
-    margin-left: 10px;
-    display:inline-block;
-}
-.page1-2{
-    height: 50px;
-    width: 50%;
-    display:inline-block;
-}
-.page1-3{
-    height: 50px;
-    width: 23%;
-    margin-left: 20px;
-    display:inline-block;
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
 }
 
+body{
+    background-image: url('http://cs-server.usc.edu:45678/hw/hw8/images/background.png');
+}
+
+/* #page1-1{
+
+    width: 20%;
+    margin-left: 10px;
+    margin-top: 50px;
+    display:inline-block;
+}
+#page1-2{
+
+    width: 50%;
+    margin-top: 15px;
+    display:inline-block;
+}
+#page1-3{
+
+    width: 30%;
+    margin-top: 50px;
+    display:inline-block;
+} */
+
 .page1_1_whole{
-    height: 50px;
+    /* height: 50px; */
     margin-bottom: 50px;
 }
 
@@ -31,6 +43,9 @@
 .Favoriate_List{
     float:left;
     
+}
+.page_2_left_button{
+    float:left;
 }
 
 .toggle_part{
@@ -57,4 +72,37 @@
 
 .dropdownpart{
     margin-bottom: 10px;
+}
+#page2_table_stockdetails{
+    float: left;
+}
+/* 
+#page2_table_favoritefb{
+   float: right;
+} */
+
+#page2_below{
+
+}
+#page2_table{
+    /* width: 48%; */
+    /* height: 390px; */
+    float: left;
+
+}
+
+#page2_chart{
+    /* width: 52%; */
+    /* height: 300px; */
+    float: right;
+
+
+}
+#stockdetailsfavfb{
+    margin-top: 10px;
+
+}
+
+#table_part{
+    margin-top: 50px;
 }

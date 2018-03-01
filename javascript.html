@@ -1,146 +1,382 @@
-<html >
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
- 
-<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-</script>
-<link rel="stylesheet" type="text/css" href="main1.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="app/lib/angular.min.js"></script>
-<script>
-    $(document).ready(function() {
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-touch.min.js"></script> -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        // process the form
-        $('form').submit(function(event) {
-            event.preventDefault();
-            $.ajax({
-                type 		: 'GET', // define the type of HTTP verb we want to use (POST for our form)
-                url 		: 'http://127.0.0.1:8081/process_get/', // the url where we want to POST
-                success     : function(data){
-                    console.log(data);
-                    data
-                }
-            });
-        });
-        return false;
-     });
-</script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+
+<script src='javascript.js'></script>
+<script src='app.js'></script>
+<link rel="stylesheet" type="text/css" href="main1.css"/>
+
+
+
 </head>
     
 
 <body>
- <div class="panel panel-default" style="margin-top:5px; margin-left:5px;margin-right:5px">
-    <br>
-    <div class="page1_1_whole">
-    <center><strong> Stock Market Search</strong></center>
-    <div>
-        <form action = "http://127.0.0.1:8081/process_get" method = "GET">
-          Enter Stock Ticker Symbol:* 
-         <input type = "text" class="form-control" placeholder="e.g.AAPL" aria-describedby="sizing-addon3" name = "symbol">  <br>
-          <button type="submit" class="btn btn-primary" >
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Get Quote
-          </button>
-          <button type="submit" class="btn btn-primary">
-                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Clear
-          </button>
-       </form>
-    </div>
-        <!-- <div class="page1-1">
-        Enter Stock Ticker Symbol:* 
-        </div>
-        <div class="page1-2">
-        <input type="text" class="form-control" placeholder="e.g.AAPL" aria-describedby="sizing-addon3" name="first_name" action = "http://127.0.0.1:8081/process_get" method = "GET"> 
-        </div>
-        <div class="page1-3">
-        <button type="button" class="btn btn-primary" >
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Get Quote
-        </button>
-        <button type="button" class="btn btn-primary">
-          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Clear
-        </button>
-        </div> -->
-    </div>
-  </div>
+<div class="center-block">
+    <div class="panel panel-default container center-block"  ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak="" ng-app="inputform">
+                <br>
 
-    <hr style="margin-top:0; margin-top:5px; margin-left:3px; margin-right:3px">
+                <div class="page1_1_whole row valign">
+<!--                     
+                            <div id="page1-0" class="container col-sm-3">
+                                    <center><strong> Stock Market Search</strong></center>
+                            </div> -->
+                            <div id="page1-1" class="container col-sm-3" style="margin-top:60px">
+                            Enter Stock Ticker Symbol:* 
+                            </div>
 
-  <div class="panel panel-default" style="margin-top:5px; margin-left:5px;margin-right:5px">
-          <div class="panel-heading">
-              <div class="Favoriate_List">
-              Favorite List
-              </div>
-              <div class="toggle_part">
-              Automatic Refresh:<input checked data-toggle="toggle" type="checkbox"> 
-                  &nbsp;&nbsp;
-              <button type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 
-              </button>
-              <button type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
-              </button>
-              </div>
-          <div class="panel-body">
-          </div>
-          </div>
-          <div class="panel-body">
-            <div class="dropdownpart">
-              <div class="sort_by">
-                  &nbsp;&nbsp;Sort by&nbsp;&nbsp;
-              </div>
-              <div class="dropdown1">
-                  <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Default
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Descending</a></li>
-                    <li><a href="#">Ascending</a></li>
-        <!--            <li role="separator" class="divider"></li>-->
-                  </ul>
-                  </div>
-              </div>
-              <div class="order">
-                  &nbsp;&nbsp;Order&nbsp;&nbsp;
-              </div>
-              <div class="dropdown2">
-                  <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Ascending
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Descending</a></li>
-                    <li><a href="#">Ascending</a></li>
-        <!--            <li role="separator" class="divider"></li>-->
-                  </ul>
-                  </div>
-              </div>
+                            <div id="page1-2" class="col-sm-6 text-left"   ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak="" ng-app="inputform">
+                             
+                                <center><strong> Stock Market Search</strong></center>
+                                <!-- <div ><strong>Enter Stock Ticker Symbol:* </strong></div> -->
+
+                                    <form id="getquote" name="stockform" style="margin-top: 24px" ng-submit="$event.preventDefault()">
+                                            <md-autocomplete ng-disabled="ctrl.isDisabled" md-no-cache="" md-selected-item="ctrl.selectedItem"
+                                                            md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                                                            md-search-text="ctrl.searchText"
+                                                            md-selected-item-change="ctrl.selectedItemChange(item)"
+                                                            md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item"
+                                                            md-min-length="0" placeholder="e.g. AAPL" ng-focus="ctrl.focus">
+                                            <md-item-template>
+                                                <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item}}</span>
+                                            </md-item-template>
+                                            <md-not-found>
+                                                No symbols matching "{{ctrl.searchText}}" were found.
+                                            </md-not-found>
+                                        </md-autocomplete>
+                          
+                                    </form>
+                                    <span id="hint" class="h5">Please enter a stock ticker symbol.</span>
+
+                            </div>
+
+                            <div id="page1-3" class="col-sm-3" style="margin-top: 50px;">
+                            <button  id="submitButton"  type="submit" class="btn btn-primary col-md-6" >
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Get Quote
+                            </button>
+                        
+                            <button id="clearButton"  type="submit" class="btn btn-primary col-md-6">
+                                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Clear
+                            </button>
+                            </div>
+
+          
+
+                </div>
+    </div>
+
+    <div class="container"><hr style="margin-top:0; margin-top:5px; margin-left:3px; margin-right:3px"></div>
+   
+    <div id="part2" class="panel panel-default carousel slide container" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner container" style="margin-left:0px; margin-right:0px; padding-left:0px; padding-right:0px"> 
+
+                <div id="page_one" class="item active" >
+                        <div class="panel panel-default" style="margin-top:10px; margin-left:0px;margin-right:0px;margin-bottom:10px">
+                                <div class="panel-heading" style="overflow:auto">
+                                    <div class="Favoriate_List">
+                                    <strong>Favorite List</strong>
+                                    </div>
+                                    <div class="toggle_part">
+                                        <input checked data-toggle="toggle" type="checkbox">
+                                        &nbsp;&nbsp;
+                                    
+                                    <button id="refresh" type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 
+                                    </button>
+                                    <button  type="button" class="btn btn-default btn-lg" id="myBtn2" disabled="true">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span> 
+                                    </button>
+                                    </div>
+                                </div>
+                                    
+                                
+                                <div class="panel-body">
+                                    
+                                    <!-- <div class="dropdownpart"> -->
+                                            <div class="container-fluid"> 
+                                                    
+                                                        <div class="col-md-6" style="display: inline-block">
+                                                            <div class="" style="width: 90px; margin-bottom: 10px; display: inline-block"><strong>Sort by</strong><br></div>
+                                                            <div class="" style="display: inline-block;">
+                                                            <ul  class="nav navbar-nav" style="height: 31px" >
+                                                                <li class="dropdown">
+                                                                    <a id='showitem' href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                        Default 
+                                                                        <b class="caret"></b>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu" id="select-method">
+                                                                        <li><a href="#" onclick='sort6()'>Default</a></li>
+                                                                        <li><a href="#" onclick='sort1()'>Symbol</a></li>
+                                                                        <li><a href="#" onclick='sort2()'>Price</a></li>
+                                                                        <li><a href="#" onclick='sort3()'>Change</a></li>
+                                                                        <li><a href="#" onclick='sort4()'>Change Percent</a></li>
+                                                                        <li><a href="#" onclick='sort5()'>Volume</a></li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        </div>
+                                                       
+                                                        <div class="col-md-6" style="display: inline-block;">
+                                                                <span class="" style="width: 90px; display: inline-block;"><strong>Order</strong></span>
+                                                                <span class="" style="display: inline-block; margin-top: 10px;">
+                                                                <ul class="nav navbar-nav" style="height: 31px">
+                                                                    <li class="dropdown">
+                                                                        <a id='showitem1' href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                            Ascending<b class="caret"></b>
+                                                                        </a>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li><a href="#" onclick='changeordervalue("Ascending") '>Ascending</a></li>
+                                                                            <li><a href="#" onclick='changeordervalue("Descending")'>Descending</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </span>
+                                                        </div>
+                                            </div>
+
+                                     <!-- </div> -->
+                                     <div class="container-fluid">
+                                    <div class="table1 table-responsive" style="margin-top: 50px;">
+                                        <table id="fav_table" class="table table-striped" >
+                                            <tr>
+                                                <th>Symbol</th>
+                                                <th>Stock Price</th>
+                                                <th>Change (Change Percent)</th>
+                                                <th>Volume</th>   
+                                                <th>Cancel</th>  
+                                            </tr>
+                                        </table>
+                                    </div>
+                                   </div>
+                                    
+                                </div>
+                        </div> 
+                </div>
+
+                <div id="page_two" class="item center-block container" >
+                    <div class="panel panel-default" style="margin-top:10px; margin-left:0px;margin-right:0px;margin-bottom:10px">
+                        <div class="panel-heading">
+                            <span><center><strong>Stock Details</strong></center></span>
+                            <!-- <div class="page_2_left_button"> -->
+                            <button id="myBtn" type="button" class="btn btn-default btn-lg">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
+                            </button>
+                            <!-- </div> -->
+                        </div>
+                        <div class="panel-body">
+                            <div class="page2-1">
+                                <ul class="nav nav-pills">
+                                    <li class="active"><a href="#page2_below_main" data-toggle="tab"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>&nbsp;Current Stock</a></li>
+                                    <li><a href="#page2_below_hist" data-toggle="tab"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Historical Charts</a></li>
+                                    <li><a href="#page2_below_news" data-toggle="tab"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>&nbsp;News Feeds</a></li>
+                                </ul>
+                            </div>
+
+                            <hr style=" margin-top:5px; margin-left:3px; margin-right:3px">
+
+                            <div id="page2_below" class="tab-content">
+                                <div class="tab-pane fade in active" id="page2_below_main">
+                                   
+                                        <div id="page2_table" class="container col-sm-6">
+                                        
+                                            <div style="float:left"><strong>Stock Details</strong></div>
+                                            <div id="page2_table_favoritefb" style="float:right">
+                                                <button type="button" class="btn btn-default" id="bt_fav">
+                                                    <img src="/img/star_empty.png" height="33" width="33">
+                                                </button>
+                                                <button type="button" class="btn btn-default" id="bt_fb">
+                                                    <img src="/img/facebook.png" height="33" width="33">
+                                                </button>
+                                            </div>
+                                          
+                                            <div id="table_part"> 
+                                                    <!-- <table class='table table-striped' id='detail_table'>
+                                                        <tr>
+                                                        <th>Stock Ticker Symbol</th>
+                                                        <td id='tda'></td>
+                                                        </tr>
+                                                        <tr>
+                                                        <th>Last Price</th>
+                                                        <td id='tdb'></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Change(Change Percent)</th>
+                                                            <td id='tdc'></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Timestamp</th>
+                                                            <td id='tdd'></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Open</th>
+                                                            <td id="tde"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Close</th>
+                                                            <td id='tdf'></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Day's Range</th>
+                                                            <td id='tdg'></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Volume</th>
+                                                            <td id='tdh'></td>
+                                                        </tr>
+                                                    </table> -->
+                                            </div>
+                                        </div>
+                                  
+                                 
+                                        <div id="page2_chart" class="container col-sm-6">
+                                            <ul id="myTab" class="nav nav-tabs">
+                                            <li id="myTab1" class="active"><a href="#price" data-toggle="tab">Price</a></li>
+                                            <li id="myTab2"><a href="#sma" data-toggle="tab">SMA</a></li>
+                                            <li id="myTab3"><a href="#ema" data-toggle="tab">EMA</a></li>
+                                            <li id="myTab4"><a href="#stoch" data-toggle="tab">STOCH</a></li>
+                                            <li id="myTab5"><a href="#rsi" data-toggle="tab">RSI</a></li>
+                                            <li id="myTab6"><a href="#adx" data-toggle="tab">ADX</a></li>
+                                            <li id="myTab7"><a href="#cci" data-toggle="tab">CCI</a></li>
+                                            <li id="myTab8"><a href="#bbands" data-toggle="tab">BBANDS</a></li>
+                                            <li id="myTab9"><a href="#macd" data-toggle="tab">MACD</a></li>
+                                            </ul>
+                                            <div id="myTabContent" class="tab-content" >
+                                                    <div class="tab-pane fade in active" id="price">
+               
+                                                    </div>
+                                                    <div class="tab-pane fade" id="sma">
+                                                        
+                                                    </div>
+                                                    <div class="tab-pane fade" id="ema">
+                                                            
+                                                    </div>
+                                                    <div class="tab-pane fade" id="stoch">
+                                                        
+                                                    </div>
+                                                    <div class="tab-pane fade" id="rsi">
+                                                            
+                                                    </div>
+                                                    <div class="tab-pane fade" id="adx">
+                                                            
+                                                    </div>
+                                                    <div class="tab-pane fade" id="cci">
+                                                            
+                                                    </div>
+                                                    <div class="tab-pane fade" id="bbands">
+                                                            
+                                                    </div>
+                                                    <div class="tab-pane fade" id="macd">
+                                                        
+                                                    </div>
+                                            </div>
+
+                                        </div>
+                             
+                                </div>
+                              <div class="tab-pane fade" id="page2_below_hist"></div>
+
+                              <div class="tab-pane fade" id="page2_below_news">
+                                  <div class="panel panel-default" id="new01" style="background-color:rgb(233, 206, 206);">
+                                      <div class="panel panel-default" id="new0" style="background-color:rgb(233, 206, 206); border:0; margin-left:12px; margin-top:15px;">
+
+                                      </div>
+
+                                  </div>
+                                  <div class="panel panel-default" id="new11" style="background-color:rgb(233, 206, 206);">
+                                        <div class="panel panel-default" id="new1" style="background-color:rgb(233, 206, 206); border:0; margin-left:12px; margin-top:15px;">
+                                               
+                                        </div>
+                                  </div>
+                                  <div class="panel panel-default" id="new21" style="background-color:rgb(233, 206, 206);">
+                                        <div class="panel panel-default" id="new2" style="background-color:rgb(233, 206, 206); border:0; margin-left:12px; margin-top:15px;">
+                                                
+                                        </div>
+                                  </div>
+                                  <div class="panel panel-default" id="new31" style="background-color:rgb(233, 206, 206);">
+                                        <div class="panel panel-default" id="new3" style="background-color:rgb(233, 206, 206); border:0; margin-left:12px; margin-top:15px;">
+                                                
+                                        </div>     
+                                  </div>
+                                  <div class="panel panel-default" id="new41" style="background-color:rgb(233, 206, 206);">
+                                        <div class="panel panel-default" id="new4" style="background-color:rgb(233, 206, 206); border:0; margin-left:12px; margin-top:15px;">
+                                                
+                                        </div>
+                                  </div>
+                              </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="table1">
-              <table class="table table-striped">
-                 <tr>
-                    <th>Symbol</th>
-                    <th>Stock Price</th>
-                    <th>Change (Change Percent)</th>
-                    <th>Volume</th>    
-                  </tr>
-                  <tr>
-                    <td>January</td>
-                    <td>$100</td>
-                  </tr>
-              </table>
-            </div>
-              
-          </div>
-  </div>
-         
+    </div>
+
+</div>
+
+<script>
+        window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '151701188685023',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.11'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+    if(document.getElementById("price").innerText!=""){
+        var content = document.getElementById("price").innerHTML;
+        console.log("CONTENT IS: "+content);
+    }
+
+</script>
+
+
 </body>
 </html>

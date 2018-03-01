@@ -1,16 +1,16 @@
 {
-  "name": "hw8",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "A app",
-  "main": "backend.js",
+  "description": "",
+  "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "xuqingluan",
+  "author": "lxq",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "moment-timezone": "^0.5.14"
   }
 }
