@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // process the form
+            $('form').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type 		: 'GET', // define the type of HTTP verb we want to use (POST for our form)
+                    url 		: 'http://127.0.0.1:8081/', // the url where we want to POST
+                    success     : function(data){
+                        console.log(data);
+
+                    }
+                });
+                // using the done promise callback
+
+                // stop the form from submitting the normal way and refreshing the page
+                //return false;
+            });
+            return false;
+        });
+    </script>
+    <style>
+        body{
+            background-image: url('http://cs-server.usc.edu:45678/hw/hw8/images/background.png');
+        }
+        .container{
+            border-radius: 5px;
+            background: #FFF;
+            margin-top:10px;
+            width: 800px;
+        }
+        #container1{
+            height: 150px;
+        }
+        #container2{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="">
+    <div class="container" id = "container1">
+        <h4 align = "center">Stock Market Search</h4>
+        <form align = "center" class="form-inline" id = 'form' action = "http://127.0.0.1:8081/" method = "GET">
+            <label for = "symbol">Enter Stock Ticker Symbol: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <input id = inputsymbol type = "text" name = "symbol" value = "MSFT">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button id = "submit" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i>  Get Quote</button>
+            <button id = "clear" type="reset" class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i>  Clear</button>
+        </form>
+
+    </div>
+    <hr width = "800px">
+    <div class = "container" id = "container2">
+
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+.page1-1{
+    height: 50px;
+    width: 20%;
+    margin-left: 10px;
+    display:inline-block;
+}
+.page1-2{
+    height: 50px;
+    width: 50%;
+    display:inline-block;
+}
+.page1-3{
+    height: 50px;
+    width: 23%;
+    margin-left: 20px;
+    display:inline-block;
+}
+
+.page1_1_whole{
+    height: 50px;
+    margin-bottom: 50px;
+}
+
+.page1_2_inner_whole{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Favoriate_List{
+    float:left;
+    
+}
+
+.toggle_part{
+    float:right;
+}
+
+.sort_by{
+    width:10%;
+    display:inline-block;
+}
+
+.order{
+    width:10%;
+    display:inline-block;
+}
+.dropdown1{
+    width:20%;
+    display:inline-block;
+}
+.dropdown2{
+    width:20%;
+    display:inline-block;
+}
+
+.dropdownpart{
+    margin-bottom: 10px;
+}
